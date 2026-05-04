@@ -1,0 +1,32 @@
+Steps to creat a files in terraform and push to github repo
+1) cd ~/Documents/terraform
+2) git init
+3) touch .gitignore 
+4) In .gitignore (add following commands)
+aws/
+*.zip
+terraform.tfvars
+*.tfvars
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+5) touch provider.tf  (add following commands)
+provider "aws" {
+  region = "ap-south-1"
+}
+6) variables.tf   (add following commands)
+variable "aws_access_key" {
+  type = string
+}
+
+variable "aws_secret_key" {
+  type      = string
+  sensitive = true
+}
+7) terraform init
+terraform plan
+8) git remote add origin https://github.com/Razain21/Terraform_codes.git
+9) git add .
+10) git commit -m "added terraform code"
+11) git branch -M main 
+12) git push -u origin main
