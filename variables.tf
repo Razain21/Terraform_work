@@ -8,3 +8,11 @@ variable "aws_secret_key" {
   type        = string
   sensitive   = true
 }
+
+variable "instance_type"{
+  type   = string
+}
+
+variable "image_id"{
+  type   = string
+}
